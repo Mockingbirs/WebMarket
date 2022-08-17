@@ -21,7 +21,7 @@ public class member {
 		//3. Connection Object
 		Connection conn = null;
 
-		String url = "jdbc:mysql://localhost:3306/member";
+		String url = "jdbc:mysql://localhost:3306/webmarket";
 		String id = "root";
 		String pw = "0000";
 
