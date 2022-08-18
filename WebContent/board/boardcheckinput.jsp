@@ -45,7 +45,7 @@
 	<div class="form-group row">
 	<label class="col-sm-2">내용</label>
 	<div class="col-sm-3">
-		<textarea name="memo" rows="5" cols="20" class="form-control" placeholder="내용을 입력하세요"></textarea>
+		<textarea name="content" rows="5" cols="20" class="form-control" placeholder="내용을 입력하세요"></textarea>
 	</div>
 	</div>
 

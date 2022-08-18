@@ -8,10 +8,10 @@
     <%
     
     String title = request.getParameter("title");
- 	String memo = request.getParameter("memo"); 
+ 	String content = request.getParameter("content"); 
  	
  	DAOboard b = new DAOboard();
- 	b.join(title, memo);
+ 	b.boardinsert(title, content, image);
  	
     
     %>
