@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<nav class="navbar fixed-bottom">
+<nav class="navbar bottom">
 <footer class="container">
 	<p> &copy; Young</p>
 </footer>

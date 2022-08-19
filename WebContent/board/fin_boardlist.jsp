@@ -14,6 +14,8 @@
 
 
 <h3>파일 목록</h3>
+
+<div class= "container w-80 l-15">
 <%
  
 
@@ -28,6 +30,8 @@ for (DTOboard file : files) {
 <% 	
 	}
 %>
+
+</div>
 <a href="fin_boardinputpage.jsp" class="btn btn-primary" role = "button">등록</a>
  
  <%@ include file="../footer.jsp" %>
