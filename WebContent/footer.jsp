@@ -8,8 +8,9 @@
 </head>
 <body>
 
-<nav class="navbar bottom">
+<nav class="navbar  fixd-bottom bg-warning">
 <footer class="container">
+<br>
 	<p> &copy; Young</p>
 </footer>
 </nav>

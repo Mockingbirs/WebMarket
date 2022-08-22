@@ -10,13 +10,18 @@
 <%@ page import="java.util.*" %>
 <%@ page import="java.sql.*" %>
 
-<%@ include file="../header.jsp" %>
 
 <% 
-   String title = null;
-   String content = null;
-   String iname = null; // 이미지 명은 데이터에 들어감
-   byte[] ifile = null; //이미지는 byte로 뽑기 데이터에는 들어가지 않음
+   String mname = null;
+   String mpass = null;	
+   String mtel = null;	
+   String memail = null;
+   String mgender = null;
+   String maddr = null;
+   
+   String miname = null; // 이미지 명은 데이터에 들어감
+   byte[] mimagefile = null; //이미지는 byte로 뽑기 데이터에는 들어가지 않음
+
    
    ServletFileUpload sfu = new ServletFileUpload(new DiskFileItemFactory());
 
@@ -32,23 +37,27 @@
       if(item.isFormField()){
          //제목, 내용 등 이미지를 제외한 나머지 항목들을 차례대로 추출
          String value = item.getString("UTF-8");
-         if(name.equals("title")) title = value;
-         else if (name.equals("content")) content = value;
+         if(name.equals("mname")) mname = value;
+         else if (name.equals("mpass")) mpass = value;
+         else if (name.equals("mtel")) mtel = value;
+         else if (name.equals("memail")) memail = value;
+         else if (name.equals("mgender")) mgender = value;
+         else if (name.equals("maddr")) maddr = value;
       }else{
          //이미지이름과 이미지파일 추출 
-         if(name.equals("image")){
-            iname = item.getName();
-            ifile = item.get();
+         if(name.equals("image1")){
+            miname = item.getName();
+            mimagefile = item.get();
             
             String root = application.getRealPath(java.io.File.separator);
-            FileUtil.saveImage(root,iname,ifile);
+            FileUtil.saveImage(root,miname,mimagefile);
          }
+        
       }
    }
    
-   DAOboard.boardinsert(title,content,iname);
+   DAOmember.memberinsert(mname, mpass, mtel, memail, mgender, maddr, miname);
    
-   response.sendRedirect("fin_boardlist.jsp");
+   response.sendRedirect("login.jsp");
 %>
 
-<%@ include file="../footer.jsp" %>

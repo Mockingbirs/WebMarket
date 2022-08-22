@@ -9,12 +9,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@ include file="../header.jsp" %>
+<%@ include file="header.jsp" %>
 
 <%
-	String no = request.getParameter("no");
+	String pid = request.getParameter("pid");
 
-	DTOproduct product = DAOproduct.productDetail(no);
+	DTOproduct product = DAOproduct.productDetail(pid);
 	
 	String img1 = product.getIname1();
 	String imgstr1 = "";
@@ -71,6 +71,6 @@
 
 <a href="productlist.jsp"><input type="button"  value="목록으로"></a>
 	
-	<%@ include file="../footer.jsp" %>
+	<%@ include file="footer.jsp" %>
 </body>
 </html>

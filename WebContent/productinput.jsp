@@ -10,7 +10,7 @@
 <%@ page import="java.util.*" %>
 <%@ page import="java.sql.*" %>
 
-<%@ include file="../header.jsp" %>
+<%@ include file="header.jsp" %>
 
 <% 
    String pid = null;
@@ -73,4 +73,4 @@
    response.sendRedirect("productlist.jsp");
 %>
 
-<%@ include file="../footer.jsp" %>
+<%@ include file="footer.jsp" %>
