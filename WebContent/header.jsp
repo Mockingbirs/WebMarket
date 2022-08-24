@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ page import = db.* %>
 <html>
 <head>
+
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -11,6 +14,10 @@
 
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+
+
+
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -24,8 +31,15 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="welcome.jsp">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">게시판</a>
+                     <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            게시판
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="boardinputpage.jsp">게시글 등록</a></li>
+            <li><a class="dropdown-item" href="boardlist.jsp">게시판 목록</a></li>
+ 
+          </ul>
         </li>
         
         
@@ -54,21 +68,23 @@
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="memberinputpage.jsp">회원가입</a></li>
             <li><a class="dropdown-item" href="memberoutpage.jsp">회원탈퇴</a></li>
+            <li><a class="dropdown-item" href="membereditpage.jsp">회원정보</a></li>
           </ul>
         </li>
 
-        
+      
                <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             관리자 전용
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="members.jsp">회원관리</a></li>
+            <li><a class="dropdown-item" href="members.jsp">회원 관리</a></li>
             <li><a class="dropdown-item" href="products.jsp">제품관리</a></li>
             <li><a class="dropdown-item" href="boards.jsp">게시판관리</a></li>
             <li><a class="dropdown-item" href="etcs.jsp">기타</a></li>
           </ul>
         </li>
+
 
 
 
@@ -86,11 +102,26 @@
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form> -->
       
+      
+      <%
+    
+      String mname = (String)session.getAttribute("mname"); 
+        String status = null;
+       if (mname == null) {
+          status = "방문을 환영합니다.로그인 해주세요";
+      } else{
+         status = mname + "님 방문을 환영합니다.";
+      }
+       
+       
+   %> 
+<span class='text-white'><%=status%></span>
 
     </div>
   </div>
 </nav>
 
+<% %>
 
 </body>
 </html>

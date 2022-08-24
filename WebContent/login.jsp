@@ -49,8 +49,13 @@
         </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">로그인</button>
     <img src = "http://papaspick.com/web/upload/2019_web/icon/kakao_login.jpg" width="305px" height="50px">
-    <p class="mt-1 mb-3 text-muted">&copy; 2017–2022</p>
   </form>
+  
+  
+  <form action = "memberinputpage.jsp" >
+    <button class="w-100 btn btn-lg btn-primary" type="submit">회원가입</button>  
+  </form>
+  
 </main>
 
 

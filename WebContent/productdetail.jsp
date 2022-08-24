@@ -1,7 +1,9 @@
 
+<%@page import="db.*"%>
+<%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import = "db.*" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,68 +11,49 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@ include file="header.jsp" %>
+<%@ include file = "header.jsp" %>
+    <%
+	mname = (String)session.getAttribute("mname");
 
+	if (mname == null) {
+		out.println("<script>alert('로그인이 필요합니다.');</script>");
+		out.println("<script>location.href='login.jsp'</script>");
+	}
+	
+
+	
+%>    
+<div class="alert alert-secondary" role="alert">
+<div class="container">
+	<h1 class = "display-3">product Detail</h1>
+</div>	
+</div>
+
+<div class="container w-70">
 <%
 	String pid = request.getParameter("pid");
 
 	DTOproduct product = DAOproduct.productDetail(pid);
 	
-	String img1 = product.getIname1();
-	String imgstr1 = "";
-	
-	
-	if(img1 !=null) {
-		imgstr1 = "images/" + img1;
-	}
-	
-	String img2 = product.getIname2();
-	String imgstr2 = "";
-	if(img2 !=null) {
-		imgstr2 = "images/" + img2;
-	}
-	
-	String img3 = product.getIname3();
-	String imgstr3 = "";
-	if(img3 !=null) {
-		imgstr3 = "images/" + img3;
-	}
-	
-	
+/* 	String img =  file.getPfilename1();  
+	String imgstr = "";
+	if (img != null) {
+		imgstr = "images/" + img;
+	} */
 %>
+TEST
+<%= product.getPdesc() %>
 
-<%=product.getPdesc()%>
-
-<div id="carouselExampleIndicators" class="carousel slide w-25 h-25" data-bs-ride="true" >
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="<%=imgstr1 %>" class="d-block w-100 h-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="<%=imgstr2 %>" class="d-block w-100 h-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="<%=imgstr3 %>" class="d-block w-100 h-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-
-<a href="productlist.jsp"><input type="button"  value="목록으로"></a>
+	<div class="form-group row">
+		<label class="col-sm-2 d-flex justify-content-end"></label>
+		<div class="col-sm-7 ">
+			<a href="productlist.jsp" class="btn btn-secondary" role="button">제품목록 &raquo;</a>		
+			<a href="deliverypage.jsp?pid=<%=product.getPid() %>&pname=<%=product.getPname() %>&pprice=<%=product.getPprice() %>" class="btn btn-danger" role="button">제품구매 &raquo;</a>		
+		</div>	
+	</div>
 	
-	<%@ include file="footer.jsp" %>
+	
+<%@ include file = "../footer.jsp" %>
+
 </body>
 </html>

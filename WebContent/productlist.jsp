@@ -2,9 +2,10 @@
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+ <%@ include file="header.jsp" %>   
+ 
     <%
-    String mname = (String)session.getAttribute("mname");
+     mname = (String)session.getAttribute("mname");
     
     if(mname == null){
     	out.println("<script>alert('로그인이 필요합니다.');</script>");
@@ -23,16 +24,8 @@
 <body>
 
 
-<%@ include file="header.jsp" %>
 
-      <%
-      	if(login){
-      		out.print(mname +"님 로그인 상태입니다.");     		
-      	}else {
-      		out.print("방문을 환영합니다.로그인 하세요.");
-      	}
-      	
-      %>
+
 
 <%-- 
 <h3>파일 목록</h3>

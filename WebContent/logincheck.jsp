@@ -19,6 +19,9 @@
     	
     	//로그인 성공 후 세션넣기
     	session.setAttribute("mname",mname);
+  
+    	
+    	
     	
     	out.println("<script>alert('로그인 성공, 제품목록으로 이동');</script>");
     	out.println("<script>location.href='productlist.jsp'</script>");
