@@ -28,12 +28,13 @@
 
 <div class="container">
 
-<form action="memberinput.jsp" method="post" enctype="multipart/form-data">
+<form name = "submit" action="memberinput.jsp" method="post" enctype="multipart/form-data">
 
 	<div class="form-group row">
 	<label class="col-sm-2">ID</label>
 	<div class="col-sm-3">
 	<input name="mname" type ="text" class="form-control" placeholder = "아이디를 입력하세요">
+	
 	</div>
 	</div>
 
@@ -117,6 +118,12 @@
 
 </div>
 <br>
+
+
+<!-- form 전송 확인  -->
+
+
+
 
 <%@ include file="footer.jsp"%>
 

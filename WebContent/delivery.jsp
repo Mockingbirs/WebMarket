@@ -35,6 +35,9 @@
     
     DAOdelivery.deliveryinsert(dpid, dmid, dmaddr, dmtel, dpname, dpprice);
     
+    
+	out.println("<script>alert('주문이 완료되었습니다.');</script>");
+	out.println("<script>location.href='productlist.jsp'</script>");
     %>
     
     

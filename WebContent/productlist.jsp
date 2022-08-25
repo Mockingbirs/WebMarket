@@ -97,6 +97,8 @@ for (DTOproduct product : products) {
 	if (img != null) {
 		imgstr = "images/" + img;
 	} 
+	
+
 %>		
 <div class="col-md-4">
 
@@ -108,7 +110,7 @@ for (DTOproduct product : products) {
   <div class="card-body">
     <h5 class="card-title">제품명 : <%=product.getPname() %></h5>
     <p class="card-text">가격 : <%=product.getPprice() %></p>
-    <p class="card-text">설명 : <%=product.getPdesc() %></p>
+    <p class="card-text">설명 : <%=product.getPdesc()%></p>
     <a href="productdetail.jsp?pid=<%=product.getPid()%>" class="btn btn-primary">제품 상세보기</a>
   </div>
 </div>
@@ -127,11 +129,12 @@ for (DTOproduct product : products) {
 
 
 
-
+<% 
+    if(mlevel.equals("1")){  %> 
 
 <a href="productinputpage.jsp" class="btn btn-primary" role = "button">등록</a>
  
- 
+     <% }%>
  
  
  <%@ include file="footer.jsp" %>

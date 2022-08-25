@@ -42,7 +42,7 @@
 	} 
 %>
 
-<img src = "<%=imgstr %>">
+<img src = "<%=imgstr %>" style="width:30rem; height:30rem;">
 <br>
 제품설명 : <%= product.getPdesc() %>
 
