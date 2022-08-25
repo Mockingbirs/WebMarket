@@ -24,6 +24,12 @@ String bid = request.getParameter("bid");
 	
 DTOboard board = DAOboard.fileDetail(bid);
 
+
+mlevel = (String)session.getAttribute("Mlevel"); 
+
+if(mlevel.equals("1")){}
+
+else{
 if((board.getAuthor()).equals(mname)){}
 /* else if(board.getAuthor()==null){
 	out.println("<script>alert('작성자가 아닙니다. 수정할 수 없습니다.');history.back();</script>");
@@ -35,7 +41,7 @@ else/* (!(board.getAuthor()).equals(mname)) */{
 	
 	/* out.println("<script>location.href='boardlist.jsp'</script>"); */}
 
-
+}
 %>
 
  

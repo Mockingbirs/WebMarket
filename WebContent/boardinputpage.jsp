@@ -40,7 +40,7 @@ if(mname == null){
 <div class="alert alert-secondary" role="alert">
 <div class = "container">
    <h1 class = "display-3">
-   Board
+   게시물 작성
    </h1>
 </div>
 </div>

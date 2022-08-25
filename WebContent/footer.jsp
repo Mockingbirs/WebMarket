@@ -7,11 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+<br>
+<br>
+<br>
 
-<nav class="navbar  fixd-bottom bg-warning">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
 <footer class="container">
 <br>
-	<p> &copy; Young</p>
+<span class='text-white'> &copy; Young</span>
 </footer>
 </nav>
 <!-- JavaScript Bundle with Popper -->

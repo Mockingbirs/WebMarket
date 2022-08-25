@@ -30,7 +30,7 @@
 <main class="form-signin">
   <form action = "logincheck.jsp" >
   <div class="d-flex justify-content-center">
-    <img class="mb-4" src="http://austiny.snu.ac.kr/image/mine.jpg" alt="" width="72" height="57">
+    <img class="mb-4" src="https://src.hidoc.co.kr/image/lib/2022/5/12/1652337370806_0.jpg" alt="" width="72" height="57">
         </div>
     <div class="form-floating">
       <input type="text" name="mname" class="form-control" id="floatingInput" placeholder="아이디를 입력하세요">

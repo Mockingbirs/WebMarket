@@ -36,7 +36,7 @@
     </div>
 
     
-    <button class="w-100 btn btn-lg btn-primary" type="submit">탈퇴</button>  <
+    <button class="w-100 btn btn-lg btn-primary" type="submit">탈퇴</button>  
   </form>
   
 

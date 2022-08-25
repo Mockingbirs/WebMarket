@@ -20,7 +20,10 @@
     	//로그인 성공 후 세션넣기
     	session.setAttribute("mname",mname);
   
+    	DTOmember member = DAOmember.memberedit(mname);
     	
+    	session.setAttribute("Mlevel",member.getMlevel());
+    	session.setAttribute("Mno",member.getMno());
     	
     	
     	out.println("<script>alert('로그인 성공, 제품목록으로 이동');</script>");

@@ -13,15 +13,14 @@
 <%@ include file="header.jsp" %>
 <%
 mname = (String)session.getAttribute("mname"); 
+String mno = (String)session.getAttribute("Mno"); 
 
 if(mname == null){
 	out.println("<script>alert('로그인이 필요합니다.');</script>");
 	out.println("<script>location.href='login.jsp'</script>");
 }
 
-
-
-DTOmember member = DAOmember.memberedit(mname);
+DTOmember member = DAOmember.memberDetail(mno);
 
 
 

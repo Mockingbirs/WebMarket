@@ -22,10 +22,17 @@ if(mname == null){
 </head>
 <body>
 
+<div class="alert alert-secondary" role="alert">
+<div class="container">
+
+	<h1 class = "display-3">
+		회원목록
+	</h1>
+</div>	
+</div>
 
 
 
-<h3>파일 목록</h3>
 
 <div class="container">
 <div class="row" align="center">

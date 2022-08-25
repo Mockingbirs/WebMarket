@@ -35,14 +35,16 @@
 
 	DTOproduct product = DAOproduct.productDetail(pid);
 	
-/* 	String img =  file.getPfilename1();  
+ 	String img =  product.getIname1();  
 	String imgstr = "";
 	if (img != null) {
 		imgstr = "images/" + img;
-	} */
+	} 
 %>
-TEST
-<%= product.getPdesc() %>
+
+<img src = "<%=imgstr %>">
+<br>
+제품설명 : <%= product.getPdesc() %>
 
 	<div class="form-group row">
 		<label class="col-sm-2 d-flex justify-content-end"></label>
