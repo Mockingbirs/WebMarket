@@ -120,5 +120,50 @@ public class DAOdelivery {
 		
 		return delivery;
 	}
+	
+	
+	public static int statusEdit(String did) throws NamingException, SQLException  {
+
+			  
+			Connection conn = null;
+			PreparedStatement stmt = null;
+			ResultSet rs = null;
+			
+	
+		  String sql = "SELECT * FROM delivery WHERE did=? ";
+			conn= ConnectionPool.get();
+			stmt = conn.prepareStatement(sql);
+				stmt.setString(1, did);	
+			rs = stmt.executeQuery();
+			
+			rs.next();
+			
+			
+			did = rs.getString(1);
+			String dstatus = rs.getString(8);
+			
+			 int dstatu = Integer.parseInt(dstatus);
+
+			dstatu++;
+
+			/* dstatus = Integer.toString(dstatu);  Stirng=>int로 변환*/
+			
+
+	
+		  
+		 String sql2 = "UPDATE delivery SET dstatus=? WHERE did=?";
+		  //Connection Pool 이용 conn= ConnectionPool.get();
+		 conn= ConnectionPool.get();
+		 
+		  stmt = conn.prepareStatement(sql2); 
+		  stmt.setString(1, dstatus);
+		  stmt.setString(2, did);
+		  
+		  
+		  int result = stmt.executeUpdate(); // 결과가 성공1 과 실패 0으로 넘어 온다.
+		  
+		  return result;
+		 
+	}
 
 }

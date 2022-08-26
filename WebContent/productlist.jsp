@@ -92,6 +92,9 @@ ArrayList<DTOproduct> products = DAOproduct.productList();
 <% 
 for (DTOproduct product : products) {
 	
+	String pdsc = product.getPdesc();
+	String dsc = pdsc.substring(0,1);
+	
  	String img =  product.getIname1();  
 	String imgstr = "";
 	if (img != null) {
@@ -104,13 +107,12 @@ for (DTOproduct product : products) {
 
 
 
-
 <div class="card" style="width: 18rem;">
   <img src="<%=imgstr %>" class="card-img-top" alt="사진이 없습니다" style="width: 18rem; height: 9rem;">
   <div class="card-body">
     <h5 class="card-title">제품명 : <%=product.getPname() %></h5>
     <p class="card-text">가격 : <%=product.getPprice() %></p>
-    <p class="card-text">설명 : <%=product.getPdesc()%></p>
+    <p class="card-text">설명 : <%=dsc%></p>
     <a href="productdetail.jsp?pid=<%=product.getPid()%>" class="btn btn-primary">제품 상세보기</a>
   </div>
 </div>

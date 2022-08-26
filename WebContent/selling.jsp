@@ -56,21 +56,52 @@ if(mname == null){
 
 ArrayList<DTOdelivery> deliverys = DAOdelivery.deliveryList();
 
+     
 for (DTOdelivery delivery : deliverys) {
+	  DTOmember member = DAOmember.memberDetail(delivery.getDmid());
 %>	
+
     <tr>
  
       <th scope="row"><%=delivery.getDid()%></th>
-      <td><a href="boarddetail.jsp?no=<%=delivery.getDid() %>"><%=delivery.getDmid()%></a></td>
+      <td><a href="boarddetail.jsp?no=<%=delivery.getDid() %>"><%=member.getMname()%></a></td>
       <td><%=delivery.getDpname() %></td>
       <td><%=delivery.getDmaddr() %></td>
       <td><%=delivery.getDmtel() %></td>
       <td><%=delivery.getDpprice() %></td>
       <td><%=delivery.getDdate() %></td>
-	  <td><%=delivery.getDdone() %></td>
+	  <td>
+	  <%
+	  if(delivery.getDstatus().equals("1")){
+	  out.print("[입금전]");
+	  }else if(delivery.getDstatus().equals("2")){
+		  
+		  %>
+		  [<a href="sellingstatus.jsp?did=<%=delivery.getDid()%>" onclick="return confirm('상태 변경하시겠습니까?');">
+		  입금완료</a>]
+		  		
+		  <%
+		  
+	  /* out.print("[입금완료]"); */
+	 
+	  }else if(delivery.getDstatus().equals("3")){
+ %>
+		  
+		  [<a href="sellingstatus.jsp?did=<%=delivery.getDid()%>" onclick="return confirm('상태 변경하시겠습니까?');">
+		  배송전</a>]
+		  		
+		  <%
+
+	  }else if(delivery.getDstatus().equals("4")){
+ 	  out.print("[배송중]");  
+	  }else{
+ 	  out.print("[배송완료]");  
+	  }
+	  %></td>
     </tr>
   	
     <% 	
+   
 	}
 %>  
     
@@ -81,6 +112,39 @@ for (DTOdelivery delivery : deliverys) {
 </div>
 <a href="boardinputpage.jsp" class="btn btn-primary" role = "button">등록</a>
  
+ 
  <%@ include file="footer.jsp" %>
+ 
+ 
+ 
+    <!--       <script>
+				function mClick(){
+				
+					
+								
+					 if (confirm("입금완료되었나요?") == true){ 
+						   //true는 확인버튼을 눌렀을 때 코드 작성						  
+						   location.href = "sellingstatus.jsp";
+						   
+						 }else{
+						   // false는 취소버튼을 눌렀을 때, 취소됨
+						   console.log("취소되었습니다");
+						 }
+				}
+				
+				function dClick(){
+					
+					
+					
+					 if (confirm("배송을 시작할까요?") == true){ 
+						   //true는 확인버튼을 눌렀을 때 코드 작성						  
+						 location.href = "sellingstatus.jsp";
+						 }else{
+						   // false는 취소버튼을 눌렀을 때, 취소됨
+						   console.log("취소되었습니다");
+						 }
+				}
+				</script> -->
+
 </body>
 </html>

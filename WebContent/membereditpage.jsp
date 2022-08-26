@@ -19,7 +19,7 @@ if(mname == null){
 	out.println("<script>alert('로그인이 필요합니다.');</script>");
 	out.println("<script>location.href='login.jsp'</script>");
 }
-
+else{
 DTOmember member = DAOmember.memberDetail(mno);
 
 
@@ -125,6 +125,7 @@ DTOmember member = DAOmember.memberDetail(mno);
 	</div>
 	</div>
 
+
 <script>  //사진 불러오는 방법
     // Get a reference to our file input
     const fileInput = document.querySelector('input[type="file"]');
@@ -176,13 +177,13 @@ DTOmember member = DAOmember.memberDetail(mno);
 </form>
 
 
-
  
 
 
 </div>
 <br>
 
+<% }%>
 <%@ include file="footer.jsp"%>
 
 
