@@ -14,11 +14,12 @@
           
       } else{
          status = mname + "님 방문을 환영합니다.";      
-        mlevel = (String)session.getAttribute("Mlevel");
+        mlevel = (String)session.getAttribute("mlevel");
       }
        
-       
+   
    %> 
+   
 
 <meta charset="UTF-8">
 <title>Insert title here</title>

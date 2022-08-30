@@ -73,7 +73,7 @@ else/* (!(board.getAuthor()).equals(mname)) */{
 </div>
 
 <div class="container">
-<form action="boardeditcheck.jsp" method="post" enctype="multipart/form-data">"
+<form action="boardedit.jsp" method="post" enctype="multipart/form-data">"
 
    <div class = "form-group row">
    <label class = "col-sm-1">제목</label>
@@ -104,7 +104,7 @@ $('.summernote').summernote({
    
    <div class="form-group row">
    <div class="col-sm-offset-2 col-sm-10">
-      <input type="submit" class="btn btn-primary" value="등록">
+      <input type="submit" class="btn btn-primary" value="수정">
          <input type="reset" class="btn btn-primary" value="취소" onclick="reset()">      
    </div>
    </div>

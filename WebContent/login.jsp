@@ -83,14 +83,6 @@
 
 
 
-for(){
-
-
-sum =+ sum;
-
-}out.print(sum)
-
-
 
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 
